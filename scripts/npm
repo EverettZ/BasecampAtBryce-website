@@ -1,0 +1,11 @@
+#!/bin/sh
+# Run npm with the project-local runtime, falling back to an installed Node.js.
+ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+for NODE_BIN in "$ROOT"/.tools/node-v26.13.1-*/bin; do
+  if [ -x "$NODE_BIN/node" ]; then
+    PATH="$NODE_BIN:$PATH"
+    export PATH
+    break
+  fi
+done
+exec npm "$@"

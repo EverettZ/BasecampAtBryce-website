@@ -1,0 +1,20 @@
+[
+  { "id": "exterior", "file": "14-Vickie-Exterior-1b.jpg", "alt": "The warmly lit yellow mountain home and covered front porch at dusk", "caption": "Welcome to The Basecamp at Bryce", "position": "50% 55%" },
+  { "id": "living", "file": "14-Vickie-Main-Floor-2.jpg", "alt": "Bright living room with a stone fireplace, comfortable sofas, and large windows", "caption": "A cozy place to come together" },
+  { "id": "deck", "file": "14-Vickie-Exterior-5.jpg", "alt": "Screened-in deck with a dining table and cushioned seating overlooking the trees", "caption": "Slow mornings on the screened-in deck" },
+  { "id": "kitchen", "file": "14-Vickie-Main-Floor-3b.jpg", "alt": "Open kitchen with wood cabinets, a breakfast bar, and a dining table by the windows", "caption": "Dinner together, at your own pace" },
+  { "id": "coffee", "file": "14-Vickie-Main-Floor-6b.jpg", "alt": "Coffee bar with coffee makers, mugs, and a selection of syrups on a wood cabinet", "caption": "Your morning coffee, just how you like it" },
+  { "id": "game-room", "file": "14-Vickie-Downstairs-1.jpg", "alt": "Downstairs game room with a ping-pong table, seating, and a stone fireplace", "caption": "A little friendly competition" },
+  { "id": "kids", "file": "14-Vickie-Downstairs-2.jpg", "alt": "Children’s play space with a woodland rug and play tent beside the downstairs living area", "caption": "A place for little explorers" },
+  { "id": "bedroom-1", "file": "14-Vickie-Main-Floor-7.jpg", "alt": "Ski-themed bedroom with a king bed, wood ceiling, and doors to the deck", "caption": "Bedroom one · 1 king bed" },
+  { "id": "bedroom-2", "file": "14-Vickie-Upstairs-1.jpg", "alt": "Upstairs queen bedroom with green curtains, a wood dresser, and golf-inspired artwork", "caption": "Bedroom two · 1 queen bed" },
+  { "id": "bedroom-3", "file": "14-Vickie-Upstairs-3.jpg", "alt": "Lake-themed bedroom with a queen bed and single bed beneath a ceiling fan", "caption": "Bedroom three · 1 queen bed + 1 single bed" },
+  { "id": "bedroom-4", "file": "14-Vickie-Downstairs-10.jpg", "alt": "Mountain bike-themed queen bedroom with an iron bed frame and bicycle wall art", "caption": "Bedroom four · 1 queen bed" },
+  { "id": "lake", "file": "14-Vickie-Drone-7.jpg", "alt": "Aerial view of Lake Laura bordered by wooded hills in autumn", "caption": "Lake Laura and a little room to breathe", "position": "50% 50%" },
+  { "id": "aerial", "file": "14-Vickie-Drone-2.jpg", "alt": "The home surrounded by trees with Lake Laura visible nearby", "caption": "Your basecamp, near the lake and surrounded by trees" },
+  { "id": "open-deck", "file": "14-Vickie-Exterior-8.jpg", "alt": "Open-air wood deck with a grill and a view into the trees", "caption": "Fresh air on the open-air deck" },
+  { "id": "arcade", "file": "14-Vickie-Downstairs-9b.jpg", "alt": "Three arcade game cabinets in the downstairs game room", "caption": "Just one more game" },
+  { "id": "ping-pong", "file": "14-Vickie-Downstairs-4.jpg", "alt": "Close-up of the ping-pong table in the game room", "caption": "Who’s up for a rematch?" },
+  { "id": "front-porch", "file": "14-Vickie-Exterior-4.jpg", "alt": "Covered front porch with rocking chairs and green shutters", "caption": "Pull up a chair and stay awhile" },
+  { "id": "living-above", "file": "14-Vickie-Main-Floor-5.jpg", "alt": "View from the upstairs landing into the light-filled living room", "caption": "Space to gather, space to unwind" }
+]

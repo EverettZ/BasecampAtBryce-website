@@ -1,0 +1,167 @@
+[
+  {
+    "id": "exterior",
+    "alt": "The warmly lit yellow mountain home and covered front porch at dusk",
+    "caption": "Welcome to The Basecamp at Bryce",
+    "position": "50% 55%",
+    "width": 1024,
+    "height": 682,
+    "src": "./images/exterior-1024.webp",
+    "srcSet": "./images/exterior-240.webp 240w, ./images/exterior-480.webp 480w, ./images/exterior-800.webp 800w, ./images/exterior-1024.webp 1024w",
+    "avifSrcSet": "./images/exterior-240.avif 240w, ./images/exterior-480.avif 480w, ./images/exterior-800.avif 800w, ./images/exterior-1024.avif 1024w"
+  },
+  {
+    "id": "living",
+    "alt": "Bright living room with a stone fireplace, comfortable sofas, and large windows",
+    "caption": "A cozy place to come together",
+    "width": 1024,
+    "height": 682,
+    "src": "./images/living-1024.webp",
+    "srcSet": "./images/living-240.webp 240w, ./images/living-480.webp 480w, ./images/living-800.webp 800w, ./images/living-1024.webp 1024w"
+  },
+  {
+    "id": "deck",
+    "alt": "Screened-in deck with a dining table and cushioned seating overlooking the trees",
+    "caption": "Slow mornings on the screened-in deck",
+    "width": 1024,
+    "height": 682,
+    "src": "./images/deck-1024.webp",
+    "srcSet": "./images/deck-240.webp 240w, ./images/deck-480.webp 480w, ./images/deck-800.webp 800w, ./images/deck-1024.webp 1024w"
+  },
+  {
+    "id": "kitchen",
+    "alt": "Open kitchen with wood cabinets, a breakfast bar, and a dining table by the windows",
+    "caption": "Dinner together, at your own pace",
+    "width": 1024,
+    "height": 683,
+    "src": "./images/kitchen-1024.webp",
+    "srcSet": "./images/kitchen-240.webp 240w, ./images/kitchen-480.webp 480w, ./images/kitchen-800.webp 800w, ./images/kitchen-1024.webp 1024w"
+  },
+  {
+    "id": "coffee",
+    "alt": "Coffee bar with coffee makers, mugs, and a selection of syrups on a wood cabinet",
+    "caption": "Your morning coffee, just how you like it",
+    "width": 1024,
+    "height": 1537,
+    "src": "./images/coffee-1024.webp",
+    "srcSet": "./images/coffee-240.webp 240w, ./images/coffee-480.webp 480w, ./images/coffee-800.webp 800w, ./images/coffee-1024.webp 1024w"
+  },
+  {
+    "id": "game-room",
+    "alt": "Downstairs game room with a ping-pong table, seating, and a stone fireplace",
+    "caption": "A little friendly competition",
+    "width": 1024,
+    "height": 682,
+    "src": "./images/game-room-1024.webp",
+    "srcSet": "./images/game-room-240.webp 240w, ./images/game-room-480.webp 480w, ./images/game-room-800.webp 800w, ./images/game-room-1024.webp 1024w"
+  },
+  {
+    "id": "kids",
+    "alt": "Children’s play space with a woodland rug and play tent beside the downstairs living area",
+    "caption": "A place for little explorers",
+    "width": 1024,
+    "height": 682,
+    "src": "./images/kids-1024.webp",
+    "srcSet": "./images/kids-240.webp 240w, ./images/kids-480.webp 480w, ./images/kids-800.webp 800w, ./images/kids-1024.webp 1024w"
+  },
+  {
+    "id": "bedroom-1",
+    "alt": "Ski-themed bedroom with a king bed, wood ceiling, and doors to the deck",
+    "caption": "Bedroom one · 1 king bed",
+    "width": 1024,
+    "height": 682,
+    "src": "./images/bedroom-1-1024.webp",
+    "srcSet": "./images/bedroom-1-240.webp 240w, ./images/bedroom-1-480.webp 480w, ./images/bedroom-1-800.webp 800w, ./images/bedroom-1-1024.webp 1024w"
+  },
+  {
+    "id": "bedroom-2",
+    "alt": "Upstairs queen bedroom with green curtains, a wood dresser, and golf-inspired artwork",
+    "caption": "Bedroom two · 1 queen bed",
+    "width": 1024,
+    "height": 682,
+    "src": "./images/bedroom-2-1024.webp",
+    "srcSet": "./images/bedroom-2-240.webp 240w, ./images/bedroom-2-480.webp 480w, ./images/bedroom-2-800.webp 800w, ./images/bedroom-2-1024.webp 1024w"
+  },
+  {
+    "id": "bedroom-3",
+    "alt": "Lake-themed bedroom with a queen bed and single bed beneath a ceiling fan",
+    "caption": "Bedroom three · 1 queen bed + 1 single bed",
+    "width": 1024,
+    "height": 683,
+    "src": "./images/bedroom-3-1024.webp",
+    "srcSet": "./images/bedroom-3-240.webp 240w, ./images/bedroom-3-480.webp 480w, ./images/bedroom-3-800.webp 800w, ./images/bedroom-3-1024.webp 1024w"
+  },
+  {
+    "id": "bedroom-4",
+    "alt": "Mountain bike-themed queen bedroom with an iron bed frame and bicycle wall art",
+    "caption": "Bedroom four · 1 queen bed",
+    "width": 1024,
+    "height": 682,
+    "src": "./images/bedroom-4-1024.webp",
+    "srcSet": "./images/bedroom-4-240.webp 240w, ./images/bedroom-4-480.webp 480w, ./images/bedroom-4-800.webp 800w, ./images/bedroom-4-1024.webp 1024w"
+  },
+  {
+    "id": "lake",
+    "alt": "Aerial view of Lake Laura bordered by wooded hills in autumn",
+    "caption": "Lake Laura and a little room to breathe",
+    "position": "50% 50%",
+    "width": 1024,
+    "height": 384,
+    "src": "./images/lake-1024.webp",
+    "srcSet": "./images/lake-240.webp 240w, ./images/lake-480.webp 480w, ./images/lake-800.webp 800w, ./images/lake-1024.webp 1024w"
+  },
+  {
+    "id": "aerial",
+    "alt": "The home surrounded by trees with Lake Laura visible nearby",
+    "caption": "Your basecamp, near the lake and surrounded by trees",
+    "width": 1024,
+    "height": 768,
+    "src": "./images/aerial-1024.webp",
+    "srcSet": "./images/aerial-240.webp 240w, ./images/aerial-480.webp 480w, ./images/aerial-800.webp 800w, ./images/aerial-1024.webp 1024w"
+  },
+  {
+    "id": "open-deck",
+    "alt": "Open-air wood deck with a grill and a view into the trees",
+    "caption": "Fresh air on the open-air deck",
+    "width": 1024,
+    "height": 682,
+    "src": "./images/open-deck-1024.webp",
+    "srcSet": "./images/open-deck-240.webp 240w, ./images/open-deck-480.webp 480w, ./images/open-deck-800.webp 800w, ./images/open-deck-1024.webp 1024w"
+  },
+  {
+    "id": "arcade",
+    "alt": "Three arcade game cabinets in the downstairs game room",
+    "caption": "Just one more game",
+    "width": 1024,
+    "height": 682,
+    "src": "./images/arcade-1024.webp",
+    "srcSet": "./images/arcade-240.webp 240w, ./images/arcade-480.webp 480w, ./images/arcade-800.webp 800w, ./images/arcade-1024.webp 1024w"
+  },
+  {
+    "id": "ping-pong",
+    "alt": "Close-up of the ping-pong table in the game room",
+    "caption": "Who’s up for a rematch?",
+    "width": 1024,
+    "height": 683,
+    "src": "./images/ping-pong-1024.webp",
+    "srcSet": "./images/ping-pong-240.webp 240w, ./images/ping-pong-480.webp 480w, ./images/ping-pong-800.webp 800w, ./images/ping-pong-1024.webp 1024w"
+  },
+  {
+    "id": "front-porch",
+    "alt": "Covered front porch with rocking chairs and green shutters",
+    "caption": "Pull up a chair and stay awhile",
+    "width": 1024,
+    "height": 682,
+    "src": "./images/front-porch-1024.webp",
+    "srcSet": "./images/front-porch-240.webp 240w, ./images/front-porch-480.webp 480w, ./images/front-porch-800.webp 800w, ./images/front-porch-1024.webp 1024w"
+  },
+  {
+    "id": "living-above",
+    "alt": "View from the upstairs landing into the light-filled living room",
+    "caption": "Space to gather, space to unwind",
+    "width": 1024,
+    "height": 683,
+    "src": "./images/living-above-1024.webp",
+    "srcSet": "./images/living-above-240.webp 240w, ./images/living-above-480.webp 480w, ./images/living-above-800.webp 800w, ./images/living-above-1024.webp 1024w"
+  }
+]
