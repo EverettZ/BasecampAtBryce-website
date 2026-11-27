@@ -65,6 +65,14 @@ Fonts are self-hosted from the Fontsource packages (DM Sans and Cormorant Garamo
 
 ## Static hosting
 
+### Netlify
+
+The repository includes `netlify.toml` with the build command, `dist` output directory, pinned Node.js version, and asset cache settings. In Netlify, import `EverettZ/BasecampAtBryce-website` from GitHub and select `main` as the production branch. Netlify reads the build settings from the repository and automatically deploys subsequent pushes to `main`.
+
+The build uses Netlify’s `URL` variable for canonical and social-sharing metadata. If you add a custom domain, set the Netlify environment variable `SITE_URL` to its full HTTPS URL and redeploy. Original photos, local tools, dependencies, and QA artifacts stay out of the published files.
+
+### Other static hosts
+
 Upload the contents of `dist/` to any static host. No Node process, backend, API keys, account system, or database is required in production. Relative asset paths support a subdirectory deployment. The site has one page with section anchors, so it needs no route rewrites.
 
 When the final public URL is known, include it at build time to generate an absolute social image URL, canonical link, and Open Graph URL:
