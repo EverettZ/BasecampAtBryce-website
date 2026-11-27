@@ -65,11 +65,15 @@ Fonts are self-hosted from the Fontsource packages (DM Sans and Cormorant Garamo
 
 ## Static hosting
 
-### Netlify
+### GitHub Pages
 
-The repository includes `netlify.toml` with the build command, `dist` output directory, pinned Node.js version, and asset cache settings. In Netlify, import `EverettZ/BasecampAtBryce-website` from GitHub and select `main` as the production branch. Netlify reads the build settings from the repository and automatically deploys subsequent pushes to `main`.
+The GitHub Pages address is **https://everettz.github.io/BasecampAtBryce-website/**. A custom domain, **www.basecamp-at-bryce.com**, is configured in the repository’s Pages settings, so GitHub redirects the project address to that domain. Its DNS must point to GitHub Pages before visitors can reach it.
 
-The build uses Netlify’s `URL` variable for canonical and social-sharing metadata. If you add a custom domain, set the Netlify environment variable `SITE_URL` to its full HTTPS URL and redeploy. Original photos, local tools, dependencies, and QA artifacts stay out of the published files.
+The repository’s `.github/workflows/pages.yml` uses GitHub’s own actions to install dependencies, build the static website, check its content and photos, and publish only `dist/` to GitHub Pages. It runs automatically on pushes to `main`, or manually from **Actions → Deploy GitHub Pages → Run workflow**. In **Settings → Pages**, the publishing source must be **GitHub Actions**.
+
+The build reads the public site URL from GitHub Pages to generate canonical and social-sharing metadata. Relative asset paths support the repository’s URL subdirectory. No third-party hosting integration, custom secrets, or backend is required. Original photos, local tools, dependencies, and QA artifacts stay out of the published files.
+
+If you configure a custom domain through GitHub Pages later, rerun the workflow to rebuild the metadata for that address.
 
 ### Other static hosts
 
