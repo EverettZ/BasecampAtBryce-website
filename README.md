@@ -67,7 +67,7 @@ Fonts are self-hosted from the Fontsource packages (DM Sans and Cormorant Garamo
 
 ### GitHub Pages
 
-The GitHub Pages address is **https://everettz.github.io/BasecampAtBryce-website/**. A custom domain, **www.basecamp-at-bryce.com**, is configured in the repository’s Pages settings, so GitHub redirects the project address to that domain. Its DNS must point to GitHub Pages before visitors can reach it.
+The website is hosted at **https://basecamp.atbryce.com/** through GitHub Pages. The repository address, **https://everettz.github.io/BasecampAtBryce-website/**, redirects to this custom domain. Its DNS CNAME points to `everettz.github.io`, and HTTPS is enabled in the repository’s Pages settings.
 
 The repository’s `.github/workflows/pages.yml` uses GitHub’s own actions to install dependencies, build the static website, check its content and photos, and publish only `dist/` to GitHub Pages. It runs automatically on pushes to `main`, or manually from **Actions → Deploy GitHub Pages → Run workflow**. In **Settings → Pages**, the publishing source must be **GitHub Actions**.
 
