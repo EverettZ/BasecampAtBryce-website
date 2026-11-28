@@ -95,7 +95,7 @@
 .skier-motion { animation: ski-carve 6s ease-in-out infinite; }
 .biker-motion { animation: bike-bob 3s ease-in-out infinite; }
 .kayak-motion { animation: kayak-bob 5s ease-in-out infinite; }
-.paddle-motion { animation: paddle 5s ease-in-out infinite; }
+.paddle-motion { animation: paddle 5s ease-in-out infinite; transform-origin: 2px 7px; }
 .bike-wheel { animation: wheel-turn 6s linear infinite; }
 .golfer-motion { animation: golfer-sway 7s ease-in-out infinite; }
 .motion-scene .skier-motion, .motion-scene .biker-motion, .motion-scene .kayak-motion, .motion-scene .paddle-motion, .motion-scene .bike-wheel, .motion-scene .golfer-motion { animation-play-state: paused; }

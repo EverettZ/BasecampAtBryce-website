@@ -56,20 +56,70 @@ function Pine({ x, y, scale = 1 }: { x: number; y: number; scale?: number }) {
   return <g transform={`translate(${x} ${y}) scale(${scale})`}><path d="M0 10V-42" stroke="#37594b" strokeWidth="3"/><path d="M-17-5 0-29 17-5H-12L0-43 12-19H-9L0-54 9-32" fill="#52755c" stroke="#37594b" strokeWidth="1.5" strokeLinejoin="round"/></g>;
 }
 
+// Absolute paths share joint coordinates; separate limbs never inherit a prior endpoint.
 function Skier() {
-  return <g className="skier-motion" stroke="#284b43" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m-24 28 58 9q8 1 10-4M-30 36l54 10q7 1 10-4" fill="none"/><path d="m0 1-12 13 18 16m-4-15 20 9 4 10" fill="none" strokeWidth="5"/><path d="m-2-18 5 18 20 6" fill="none" stroke="#b75f3d" strokeWidth="10"/><path d="m0-13-13 13-13-3m45 9 7 26m-52-29-3 25" fill="none"/><circle cx="-4" cy="-29" r="8" fill="#e0ab7c"/><path d="M-13-30q0-13 13-10l6 10Z" fill="#d9b65e" stroke="none"/><path d="m-17-38-21-5" stroke="#b75f3d" strokeWidth="5"/><path d="m0-29 7 1" stroke="#284b43" strokeWidth="4"/></g>;
+  return <g className="skier-motion" stroke="#284b43" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none">
+    <path d="M-24 31 34 40Q42 41 44 36M-30 39 24 48Q31 49 34 44" />
+    <path d="M-24-5-29 30M23 4 31 33" strokeWidth="2" />
+    <path d="M3 1-12 20-6 42 1 43M3 1 21 20 18 36 25 38" strokeWidth="5" />
+    <path d="M-4-23-2-15" strokeWidth="4" />
+    <path d="M-2-15 3 1" stroke="#b75f3d" strokeWidth="10" />
+    <path d="M-2-14-15-1M-2-14 9-2" stroke="#b75f3d" strokeWidth="6" />
+    <path d="M-15-1-24-5M9-2 23 4" stroke="#e0ab7c" strokeWidth="4" />
+    <path d="M-4-22-19-25-33-32" stroke="#b75f3d" strokeWidth="4" />
+    <circle cx="-4" cy="-31" r="8" fill="#e0ab7c" />
+    <path d="M-13-32Q-13-45 0-42L6-32Z" fill="#d9b65e" stroke="none" />
+    <path d="M0-31 7-30" strokeWidth="4" />
+  </g>;
 }
 
 function Biker() {
-  return <g className="biker-motion" stroke="#284b43" strokeWidth="2.7" strokeLinecap="round" strokeLinejoin="round" fill="none"><g transform="translate(-33 24)"><g className="bike-wheel"><circle r="19"/><path d="M-15-11 15 11M-11 15 11-15" strokeWidth="1"/></g></g><g transform="translate(33 24)"><g className="bike-wheel"><circle r="19"/><path d="M-15-11 15 11M-11 15 11-15" strokeWidth="1"/></g></g><path d="m-33 24 18-29 20 29h-38L-5-5H17l16 29M11-15h9l-3 10M-22-8h15"/><path d="m-7-32-9 20 21 8L0 17m-11-30-8 19 12 12" strokeWidth="5"/><path d="m-4-37 18 10 1 15" stroke="#b75f3d" strokeWidth="10"/><path d="m14-28 12 8-6 7"/><circle cx="4" cy="-51" r="8" fill="#dfaa79"/><path d="M-5-53q2-13 15-6l4 7Z" fill="#d9b65e" stroke="none"/></g>;
+  return <g className="biker-motion" stroke="#284b43" strokeWidth="2.7" strokeLinecap="round" strokeLinejoin="round" fill="none">
+    <g transform="translate(-33 24)"><g className="bike-wheel"><circle r="19" /><path d="M-15-11 15 11M-11 15 11-15" strokeWidth="1" /></g></g>
+    <g transform="translate(33 24)"><g className="bike-wheel"><circle r="19" /><path d="M-15-11 15 11M-11 15 11-15" strokeWidth="1" /></g></g>
+    <path d="M-33 24-15-5 0 24H-33M-15-5H17L0 24M17-5 33 24M11-15H20L17-5M-22-8H-7M0 24-2 17M0 24-2 29" />
+    <path d="M-15-9-23 7-7 17H-1M-15-9 5 3-1 29H5" strokeWidth="5" />
+    <path d="M10-36 7-31" strokeWidth="4" />
+    <path d="M7-31-15-9" stroke="#b75f3d" strokeWidth="10" />
+    <path d="M7-31 22-24M7-31 11-19" stroke="#b75f3d" strokeWidth="6" />
+    <path d="M22-24 20-15M11-19 17-15" stroke="#dfaa79" strokeWidth="4" />
+    <circle cx="12" cy="-44" r="8" fill="#dfaa79" />
+    <path d="M3-46Q5-59 18-52L22-45Z" fill="#d9b65e" stroke="none" />
+  </g>;
 }
 
 function Kayaker() {
-  return <g className="kayak-motion" stroke="#284b43" strokeLinecap="round" strokeLinejoin="round"><path d="M-55 11Q0-11 55 11 8 37-55 11Z" fill="#d5a756" strokeWidth="2"/><ellipse cy="9" rx="17" ry="6" fill="#526f60" strokeWidth="2"/><path d="M-4-10 2 7" stroke="#b75f3d" strokeWidth="14"/><circle cx="-6" cy="-24" r="8" fill="#e3ad7c" strokeWidth="2"/><path d="M-16-25q0-12 12-9l7 8" fill="#e5c976" strokeWidth="2"/><g className="paddle-motion"><path d="m-30-22 59 48" strokeWidth="3"/><path d="m-38-32 14 8-5 7-12-10Zm63 51 13 8-3 8-15-11Z" fill="#f4e8cb" strokeWidth="2"/><path d="m-8-6-10-6m22 8 9 7" stroke="#e3ad7c" strokeWidth="5"/></g></g>;
+  return <g className="kayak-motion" stroke="#284b43" strokeLinecap="round" strokeLinejoin="round" fill="none">
+    <path d="M-55 11Q0-11 55 11 8 37-55 11Z" fill="#d5a756" strokeWidth="2" />
+    <ellipse cy="9" rx="17" ry="6" fill="#526f60" strokeWidth="2" />
+    {/* Torso, head, arms, hands, and paddle rotate together around the seated hip. */}
+    <g className="paddle-motion">
+      <path d="M-6-17-4-10" strokeWidth="4" />
+      <path d="M-4-10 2 7" stroke="#b75f3d" strokeWidth="14" />
+      <path d="M-4-10-13-13M-4-10 12-6" stroke="#b75f3d" strokeWidth="6" />
+      <path d="M-13-13-20-14M12-6 15 15" stroke="#e3ad7c" strokeWidth="4" />
+      <circle cx="-6" cy="-24" r="8" fill="#e3ad7c" strokeWidth="2" />
+      <path d="M-16-25Q-16-37-4-34L3-26" fill="#e5c976" strokeWidth="2" />
+      <path d="M-30-22 29 26" strokeWidth="3" />
+      <path d="M-38-32-24-24-29-17-41-27ZM25 19 38 27 35 35 20 24Z" fill="#f4e8cb" strokeWidth="2" />
+      <circle cx="-20" cy="-14" r="2.5" fill="#e3ad7c" stroke="none" />
+      <circle cx="15" cy="15" r="2.5" fill="#e3ad7c" stroke="none" />
+    </g>
+  </g>;
 }
 
 function Golfer() {
-  return <g className="golfer-motion" stroke="#284b43" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="m-6 2-9 35m14-34 15 30 8 3" strokeWidth="6"/><path d="m-5-24 3 25" stroke="#b75f3d" strokeWidth="13"/><circle cx="-8" cy="-39" r="8" fill="#e3ad7c"/><path d="M-18-42q2-11 14-6l3 8h-21" fill="#d9b65e" strokeWidth="2"/><path d="m-6-21 17 10 15-11m-29 4 16 2 11-8m-1 1 20 53 6-1"/><circle cx="48" cy="32" r="2" fill="#fff" strokeWidth="1"/></g>;
+  return <g className="golfer-motion" stroke="#284b43" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none">
+    <path d="M-2 1-11 21-15 36H-9M-2 1 7 18 14 34 22 36" strokeWidth="6" />
+    <path d="M-8-31-5-24" strokeWidth="4" />
+    <path d="M-5-24-2 1" stroke="#b75f3d" strokeWidth="13" />
+    <path d="M-5-21 10-11 24-22M-5-21 6-6 25-19" />
+    <path d="M-5-21 4-15M-5-21 1-13" stroke="#b75f3d" strokeWidth="6" />
+    <path d="M25-21 45 31 51 30" />
+    <circle cx="-8" cy="-39" r="8" fill="#e3ad7c" />
+    <path d="M-18-42Q-16-53-4-48L-1-40H-22" fill="#d9b65e" strokeWidth="2" />
+    <circle cx="48" cy="32" r="2" fill="#fff" strokeWidth="1" />
+  </g>;
 }
 
 export function AdventureLandscape() {
