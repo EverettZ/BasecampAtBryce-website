@@ -72,3 +72,11 @@ export const faqs = [
   { question: 'What is the Lake Laura walk like?', answer: 'The loop is approximately 2.5 miles, with wooded stretches and lake views. Bryce describes it as easy to moderate, and it is not wheelchair accessible. Allow time for uneven natural terrain and check trail conditions before you set out.' },
   { question: 'What about Wi-Fi, parking, and laundry?', answer: `The home has Wi-Fi, a dedicated workspace, ${property.parking.toLowerCase()}, a washer and dryer, and air conditioning. You can find the complete, current amenity list and house rules on Airbnb.` },
 ];
+
+export const soundtrack = {
+  autoplay: true,
+  title: 'Twilight at Basecamp',
+  description: 'A quiet lakeside soundtrack',
+  src: './audio/twilight-at-basecamp.mp3',
+  credit: 'Original instrumental generated with ElevenLabs Music v2',
+} as const;

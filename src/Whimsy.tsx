@@ -24,7 +24,7 @@ export function WhimsyFrame({ children }: { children: ReactNode }) {
   useEffect(() => {
     const layers = [...(root.current?.querySelectorAll<HTMLElement>('[data-parallax]') ?? [])];
     if (paused || reduced) {
-      layers.forEach(layer => layer.style.setProperty('--parallax-y', '0px'));
+      if (reduced) layers.forEach(layer => layer.style.setProperty('--parallax-y', '0px'));
       return;
     }
     let frame = 0;
@@ -34,8 +34,10 @@ export function WhimsyFrame({ children }: { children: ReactNode }) {
         const bounds = layer.parentElement!.getBoundingClientRect();
         if (bounds.bottom < 0 || bounds.top > window.innerHeight) return;
         const progress = (window.innerHeight / 2 - (bounds.top + bounds.height / 2)) / window.innerHeight;
-        const distance = window.innerWidth < 700 ? 9 : 22;
-        layer.style.setProperty('--parallax-y', `${Math.max(-distance, Math.min(distance, progress * distance))}px`);
+        const depth = Number(layer.dataset.parallax) || 22;
+        const distance = window.innerWidth < 700 ? depth * .4 : depth;
+        const travel = progress * 2 * window.innerHeight / (window.innerHeight + bounds.height);
+        layer.style.setProperty('--parallax-y', `${Math.max(-distance, Math.min(distance, travel * distance))}px`);
       });
     };
     const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };

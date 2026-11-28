@@ -1,0 +1,68 @@
+/* Photo motion stays inside its frame; text and click targets stay still. */
+.whimsical-site img[data-parallax],
+.whimsical-site .photo-button:hover > img[data-parallax] {
+  transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.1);
+  transition: none;
+}
+.soundtrack-panel {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 0 13px;
+  width: min(100%, 330px);
+  border-top: 1px dashed #a7b299;
+  padding-top: 18px;
+  margin-top: 23px;
+  text-align: left;
+}
+.soundtrack-play {
+  grid-row: 1 / 3;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #71846c;
+  display: grid;
+  place-items: center;
+  background: #faf6ec;
+  color: #284b40;
+}
+.soundtrack-play:hover { background: #e1e7d4; }
+.soundtrack-play:disabled { opacity: .6; }
+.soundtrack-copy { display: flex; flex-direction: column; gap: 3px; }
+.soundtrack-copy > span:first-child { font-size: .875rem; font-weight: 600; }
+.soundtrack-copy > span:last-child { font-size: .75rem; color: #536453; }
+.soundtrack-volume { display: flex; gap: 9px; align-items: center; min-height: 44px; color: #536453; }
+.soundtrack-volume input { width: 120px; height: 28px; cursor: pointer; accent-color: #526e51; margin: 0; }
+.soundtrack-volume input:focus-visible { outline: 3px solid #a45435; outline-offset: 4px; border-radius: 5px; }
+.soundtrack-error { grid-column: 1 / -1; font-size: .875rem; color: #873b28; margin-top: 8px; }
+.soundtrack-dock {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 40;
+  min-height: 48px;
+  width: 48px;
+  justify-content: center;
+  padding: 12px;
+  background: #faf6ec;
+  border: 1px solid #8a9c89;
+  border-radius: 30px;
+  box-shadow: 0 3px 14px #284b4020;
+  color: #284b40;
+  font-size: .875rem;
+}
+.soundtrack-dock:hover { background: #e8eddd; }
+#mobile-sound-slot, .soundtrack-mobile-pause { display: none; }
+@media (max-width: 600px) {
+  .soundtrack-panel { margin-top: 21px; }
+  .soundtrack-dock { display: none; }
+  .whimsical-site .mobile-booking > div:first-child { min-width: 0; flex: 1; }
+  .whimsical-site .mobile-booking #mobile-sound-slot:not(:empty) { display: flex; flex: 0 0 44px; }
+  .soundtrack-mobile-pause { display: grid; place-items: center; border: 1px solid #8a9c89; background: transparent; color: #284b40; border-radius: 50%; width: 44px; height: 44px; padding: 0; }
+  .soundtrack-mobile-pause:hover { background: #e1e7d4; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .whimsical-site img[data-parallax] { transform: scale(1.1) !important; }
+}

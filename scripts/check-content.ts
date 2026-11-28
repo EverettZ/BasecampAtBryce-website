@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { access, readFile } from 'node:fs/promises';
-import { activities, bedrooms, photos, property, recommendations } from '../src/content';
+import { activities, bedrooms, photos, property, recommendations, soundtrack } from '../src/content';
 
 assert.equal(property.bookingUrl, 'https://airbnb.com/h/thebasecampatbryce');
 assert.equal(bedrooms.length, 4);
@@ -16,7 +16,12 @@ for (const photo of photos) {
   }
 }
 for (const item of [...activities, ...recommendations]) assert.equal(new URL(item.url).protocol, 'https:');
+const soundPath = soundtrack.src.replace(/^\.\//, '');
+await access(`public/${soundPath}`);
+await access(`dist/${soundPath}`);
 const html = await readFile('dist/index.html', 'utf8');
+assert(/<audio\b[^>]*preload="none"/.test(html), 'Soundtrack must use preload=none before playback is attempted');
+assert(!/<audio\b[^>]*autoplay/.test(html), 'Autoplay must be coordinated in JavaScript so gain and rejected permission are handled');
 assert(html.includes('Slow mornings.'), 'Production HTML must contain prerendered page content');
 assert(html.includes('id="lake-laura"'));
 assert(!html.includes('<!--app-html-->'));
