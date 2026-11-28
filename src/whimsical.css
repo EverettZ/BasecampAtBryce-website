@@ -1,0 +1,202 @@
+/* A mountain field guide: ink, warm paper, little adventures. */
+.whimsical-site {
+  --paper: #faf6ec;
+  --forest: #284b40;
+  --ink: #28483e;
+  --muted: #586a5d;
+  --line: #d6d9c8;
+  --rust: #a45435;
+  color: var(--ink);
+  background: var(--paper);
+}
+.whimsical-site .site-header { background: var(--paper); height: 94px; gap: 22px; border-bottom: 1px solid #284b4015; }
+.whimsical-site .main-nav { gap: 25px; margin-left: auto; }
+.whimsical-site .brand > svg { transform: rotate(-5deg); }
+.whimsical-site .button { border-radius: 8px 5px 9px 5px; }
+.whimsical-site .button-outline { background: transparent; }
+.whimsical-site h2 em { color: var(--rust); }
+.whimsical-site .eyebrow { letter-spacing: .14em; }
+.motion-toggle { order: 3; display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 44px; min-width: 44px; padding: 9px 12px; border: 1px dashed #8a9c89; border-radius: 24px; background: transparent; font-size: .75rem; white-space: nowrap; }
+.motion-toggle:hover { background: #e9eddf; }
+.motion-toggle:disabled { opacity: .75; }
+.whimsical-site .hero { height: auto; min-height: 800px; max-height: none; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 3%; padding: 0 6vw 240px; color: var(--ink); background: #f0efdf; overflow: hidden; }
+.whimsical-site .hero-content { padding: 64px 0 34px; position: relative; z-index: 2; max-width: none; }
+.whimsical-site .hero-content .eyebrow { color: #536b54; margin-bottom: 30px; font-size: .6875rem; }
+.whimsical-site .hero-property-name { font-style: italic; color: #59634a; font-size: 1.5rem; }
+.whimsical-site .hero h1 { font-size: clamp(3.3rem, 5.7vw, 6rem); line-height: .99; letter-spacing: -.04em; }
+.whimsical-site .hero h1 em { color: var(--rust); }
+.whimsical-site .hero-description { color: #536453; font-size: 1rem; margin: 25px 0; }
+.whimsical-site .hero .button-light { background: var(--forest); color: #fff; box-shadow: 3px 4px 0 #cbd3bc; }
+.whimsical-site .hero .button-light:hover { background: #3a5d4c; }
+.whimsical-site .hero-booking-note { color: #596a55; font-size: .75rem; margin-top: 15px; }
+.hero-postcard { position: relative; z-index: 2; background: #fffdf5; padding: 13px 13px 22px; transform: rotate(3deg); box-shadow: 3px 12px 25px #384d3620; margin: 38px 0 0; }
+.hero-postcard::before { content: ''; position: absolute; z-index: 3; top: -14px; left: 40%; width: 100px; height: 30px; transform: rotate(-8deg); background: #d5b97d91; clip-path: polygon(2% 0,98% 4%,100% 94%,0 100%); }
+.postcard-photo { position: relative; aspect-ratio: 1.18; overflow: hidden; }
+.whimsical-site .hero-image { position: static; width: 100%; height: 100%; z-index: auto; display: block; }
+.whimsical-site .hero-image > img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50% !important; }
+.postcard-caption { display: block; padding: 16px 50px 0 4px; font-family: var(--serif); font-size: 1.15rem; font-style: italic; line-height: 1.2; }
+.postcard-stamp { width: 52px; height: 52px; border: 1px dashed #9da388; border-radius: 50%; position: absolute; right: 10px; bottom: 4px; transform: rotate(-15deg); display: grid; place-items: center; color: #6e8266; }
+.postcard-stamp svg { width: 35px; }
+.adventure-landscape { position: absolute; bottom: -1px; left: 0; width: 100%; height: 320px; pointer-events: none; }
+.adventure-landscape > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.parallax-layer { transform: translateY(var(--parallax-y, 0px)); }
+.whimsical-site .hero-scroll { left: 6vw; bottom: 20px; z-index: 3; background: #faf6eceb; padding: 0 15px; border-radius: 25px; color: var(--forest); }
+.whimsical-site .hero-side-note { display: none; }
+.whimsical-site .facts-bar { border-bottom: 1px dashed #a8b39b; background: #faf6ec; padding-top: 33px; padding-bottom: 33px; }
+.whimsical-site .facts-bar dt { color: var(--rust); }
+.whimsical-site .home-section { position: relative; }
+.whimsical-site .home-intro h2 em { position: relative; }
+.whimsical-site .home-intro h2 em::after { content: ''; display: block; width: 70%; height: 10px; margin-top: 10px; border-top: 2px solid #be985c; border-radius: 50%; transform: rotate(-3deg); }
+.whimsical-site .home-photo-large { border-radius: 46% 46% 5px 5px / 18% 18% 5px 5px; }
+.whimsical-site .home-photo-secondary > .photo-button { border: 8px solid #fffdf5; transform: rotate(2deg); box-shadow: 3px 5px 0 #e6e5d6; }
+.whimsical-site .photo-aside { padding-top: 40px; }
+.whimsical-site .comfort > svg { background: #e6ead9; width: 44px; height: 44px; padding: 9px; border-radius: 40% 54% 42% 48%; transform: rotate(-7deg); }
+.whimsical-site .home-extras { border-top-style: dashed; }
+.whimsical-site .photo-mosaic { padding: 15px; background: #e9ecdf; gap: 16px; border-radius: 9px 26px 10px 20px; }
+.whimsical-site .bedroom .photo-button { border-radius: 45% 45% 5px 5px / 25% 25% 5px 5px; border: 6px solid #fffdf5; box-shadow: 0 3px 0 #dedfce; }
+.whimsical-site .bedroom:nth-child(even) .photo-button { transform: rotate(2deg); }
+.whimsical-site .bedroom:nth-child(odd) .photo-button { transform: rotate(-2deg); }
+.whimsical-site .lake-section { background: #284b40; }
+.whimsical-site .lake-photo { overflow: hidden; }
+.whimsical-site .lake-content h2 em { color: #e9ca87; }
+.whimsical-site .lake-photo-label { bottom: 25px; left: 25px; max-width: calc(100% - 50px); border-radius: 3px; }
+.lake-doodle { position: absolute; width: 230px; right: 8px; top: 18px; z-index: 1; transform: rotate(7deg); background: #faf6ecf5; border-radius: 45% 53% 48% 42%; box-shadow: 0 7px 15px #183d3520; }
+.lake-doodle svg { width: 100%; display: block; }
+.whimsical-site .lake-loop { border-top-style: dashed; border-bottom-style: dashed; }
+.whimsical-site .lake-loop-number { color: #e9ca87; transform: rotate(-5deg); }
+.whimsical-site .adventure-section { position: relative; }
+.whimsical-site .activity { background: #fffdf5; border-radius: 11px; overflow: hidden; border-color: #d2d9c4; box-shadow: 0 4px 0 #e6e7d9; }
+.whimsical-site .activity-art { height: auto; aspect-ratio: 360 / 225; background: #e4ece4; display: block; }
+.whimsical-site .activity-art > svg { display: block; width: 100%; height: 100%; margin: 0; }
+.whimsical-site .activity-art > span { bottom: 13px; left: 16px; background: #fffdf5ee; padding: 5px 10px; border-radius: 15px; font-size: .625rem; letter-spacing: .12em; color: #3d5645; writing-mode: horizontal-tb; }
+.whimsical-site .scene-bike { background: #e8edda; }
+.whimsical-site .scene-golf { background: #f0ebd6; }
+.whimsical-site .activity-copy { padding: 28px 25px 30px; }
+.whimsical-site .activity-copy h3 { font-size: 1.9rem; }
+.whimsical-site .activity-copy p { font-size: 1rem; }
+.whimsical-site .slow-day { border-style: dashed none; }
+.whimsical-site .slow-day > svg { width: 56px; height: 56px; padding: 10px; border-radius: 50%; background: #e6ead9; transform: rotate(-9deg); }
+.whimsical-site .host-tip { padding: 22px 25px; border: 1px dashed #9ea98c; border-radius: 2px 18px 5px 20px; background: #f0efde; transform: rotate(-1deg); }
+.whimsical-site .recommendations article { border-bottom-style: dashed; }
+.whimsical-site .recommendations .text-link { min-height: 36px; }
+.whimsical-site .host-section { background: #e8ecdd; border-radius: 65px 5px 65px 5px; }
+.whimsical-site .host-section > svg { border: 1px dashed #879b7a; padding: 25px; border-radius: 50%; transform: rotate(-7deg); width: 180px; height: 180px; }
+.whimsical-site .faq-list details { border-bottom-style: dashed; }
+.whimsical-site .faq-list details:first-child { border-top-style: dashed; }
+.whimsical-site .booking-section { background: #284b40; border-radius: 50% 50% 0 0 / 35px 35px 0 0; }
+.whimsical-site .booking-section::before, .whimsical-site .booking-section::after { content: ''; pointer-events: none; position: absolute; border: 1px dashed #a8bc9860; border-radius: 50%; width: 450px; height: 350px; bottom: -230px; transform: rotate(-20deg); }
+.whimsical-site .booking-section::before { left: -150px; }
+.whimsical-site .booking-section::after { right: -170px; bottom: -160px; }
+.whimsical-site .booking-section h2 em { color: #e9ca87; }
+.whimsical-site .mobile-booking { background: #faf6ecf7; }
+
+/* Motion is paused offscreen and by the global control. No content is hidden. */
+.skier-motion, .biker-motion, .kayak-motion, .paddle-motion, .bike-wheel, .golfer-motion { animation-play-state: paused; transform-box: view-box; }
+.skier-motion { animation: ski-carve 6s ease-in-out infinite; }
+.biker-motion { animation: bike-bob 3s ease-in-out infinite; }
+.kayak-motion { animation: kayak-bob 5s ease-in-out infinite; }
+.paddle-motion { animation: paddle 5s ease-in-out infinite; }
+.bike-wheel { animation: wheel-turn 6s linear infinite; }
+.golfer-motion { animation: golfer-sway 7s ease-in-out infinite; }
+.motion-scene .skier-motion, .motion-scene .biker-motion, .motion-scene .kayak-motion, .motion-scene .paddle-motion, .motion-scene .bike-wheel, .motion-scene .golfer-motion { animation-play-state: paused; }
+[data-motion='on'] .motion-scene.is-in-view .skier-motion,
+[data-motion='on'] .motion-scene.is-in-view .biker-motion,
+[data-motion='on'] .motion-scene.is-in-view .kayak-motion,
+[data-motion='on'] .motion-scene.is-in-view .paddle-motion,
+[data-motion='on'] .motion-scene.is-in-view .bike-wheel,
+[data-motion='on'] .motion-scene.is-in-view .golfer-motion { animation-play-state: running; }
+@keyframes ski-carve { 0%,100% { transform: translate(-7px, -2px) rotate(-3deg); } 50% { transform: translate(7px, 2px) rotate(3deg); } }
+@keyframes bike-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+@keyframes wheel-turn { to { transform: rotate(360deg); } }
+@keyframes kayak-bob { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(3px) rotate(2deg); } }
+@keyframes paddle { 0%,100% { transform: rotate(-8deg); } 50% { transform: rotate(8deg); } }
+@keyframes golfer-sway { 0%,80%,100% { transform: rotate(0); } 40% { transform: rotate(-3deg); } }
+
+@media (min-width: 1600px) {
+  .whimsical-site .hero { padding-left: max(6vw, calc((100vw - 1408px) / 2)); padding-right: max(6vw, calc((100vw - 1408px) / 2)); }
+  .whimsical-site .hero h1 { font-size: 6rem; }
+}
+@media (max-width: 1100px) {
+  .whimsical-site .site-header { padding: 0 4vw; gap: 14px; }
+  .whimsical-site .main-nav { gap: 17px; }
+  .motion-toggle { padding: 9px; }
+  .motion-toggle span { display: none; }
+  .whimsical-site .hero { min-height: 730px; padding-bottom: 220px; }
+  .whimsical-site .hero-content { padding-top: 54px; }
+  .whimsical-site .hero h1 { font-size: 5.7vw; }
+  .whimsical-site .hero-content .eyebrow { max-width: 320px; }
+  .whimsical-site .hero-property-name { font-size: 1.35rem; }
+  .whimsical-site .hero .button { padding: 15px 18px; }
+  .postcard-caption { font-size: 1rem; }
+  .whimsical-site .activity-copy { padding: 25px 20px; }
+  .whimsical-site .activity-copy h3 { font-size: 1.75rem; }
+}
+@media (max-width: 850px) {
+  .whimsical-site .site-header { height: 80px; padding: 0 24px; }
+  .whimsical-site .main-nav { margin-left: 0; gap: 0; background: var(--paper); }
+  .whimsical-site .menu-toggle { order: 4; }
+  .motion-toggle { margin-left: auto; }
+  .whimsical-site .hero { min-height: 660px; gap: 4%; padding: 0 5vw 210px; }
+  .whimsical-site .hero-content { padding-top: 45px; }
+  .whimsical-site .hero h1 { font-size: 5.9vw; }
+  .whimsical-site .hero-content .eyebrow { font-size: .625rem; margin-bottom: 22px; }
+  .whimsical-site .hero-description { font-size: .9375rem; }
+  .hero-postcard { padding: 9px 9px 18px; margin-top: 0; }
+  .postcard-photo { aspect-ratio: .85; }
+  .postcard-stamp { width: 42px; height: 42px; }
+  .postcard-stamp svg { width: 28px; }
+  .postcard-caption { padding-right: 35px; }
+  .adventure-landscape { height: 260px; }
+  .whimsical-site .lake-photo { height: 460px; }
+  .lake-doodle { width: 190px; }
+  .whimsical-site .activity-grid { grid-template-columns: 1fr; max-width: 660px; margin: auto; gap: 24px; }
+  .whimsical-site .activity { display: grid; grid-template-columns: .9fr 1.1fr; }
+  .whimsical-site .activity-art { aspect-ratio: auto; min-height: 260px; }
+  .whimsical-site .activity-art > svg { position: absolute; top: 50%; transform: translateY(-50%); height: auto; }
+  .whimsical-site .host-section > svg { width: 125px; height: 125px; padding: 15px; }
+}
+@media (max-width: 600px) {
+  .whimsical-site .site-header { height: 76px; gap: 10px; padding: 0 18px; }
+  .whimsical-site .brand { gap: 8px; }
+  .whimsical-site .main-nav { top: 76px; }
+  .whimsical-site .hero { display: flex; flex-direction: column; gap: 0; min-height: 0; padding: 0 24px 175px; }
+  .whimsical-site .hero-content { padding: 37px 0 24px; width: 100%; }
+  .whimsical-site .hero-content .eyebrow { font-size: .5625rem; letter-spacing: .1em; margin-bottom: 21px; max-width: none; }
+  .whimsical-site .hero-property-name { font-size: 1.3rem; margin-bottom: 10px; }
+  .whimsical-site .hero h1 { font-size: clamp(2.8rem, 10.8vw, 4rem); line-height: 1.02; }
+  .whimsical-site .hero-description { font-size: 1rem; margin: 21px 0; }
+  .whimsical-site .hero .button { font-size: .875rem; padding: 15px 18px; }
+  .whimsical-site .hero-booking-note { font-size: .75rem; margin-top: 12px; }
+  .hero-postcard { width: 94%; margin: 13px 0 0; padding: 9px 9px 17px; }
+  .postcard-photo { aspect-ratio: 1.5; }
+  .postcard-caption { font-size: 1.05rem; padding-top: 12px; padding-right: 40px; }
+  .adventure-landscape { height: 190px; }
+  .adventure-landscape > svg { width: 220%; max-width: none; left: -60%; }
+  .whimsical-site .hero-scroll { display: none; }
+  .whimsical-site .facts-bar { padding: 26px 24px; }
+  .whimsical-site .facts-bar > p > span { font-size: .875rem; }
+  .whimsical-site .facts-bar dd { font-size: .75rem; }
+  .whimsical-site .home-photo-large { height: 350px; }
+  .whimsical-site .home-photo-secondary > .photo-button { border-width: 5px; }
+  .whimsical-site .photo-aside { padding-top: 0; }
+  .whimsical-site .photo-mosaic { padding: 9px; gap: 9px; grid-template-rows: 220px 180px; }
+  .whimsical-site .photo-caption { font-size: .8125rem; }
+  .whimsical-site .bedroom .photo-button { border-width: 4px; }
+  .whimsical-site .lake-photo { height: 370px; }
+  .lake-doodle { width: 150px; right: 12px; top: 16px; }
+  .whimsical-site .lake-photo-label { left: 20px; max-width: calc(100% - 40px); }
+  .whimsical-site .activity { display: block; }
+  .whimsical-site .activity-art { min-height: 0; aspect-ratio: 360 / 225; }
+  .whimsical-site .activity-art > svg { position: static; transform: none; height: 100%; }
+  .whimsical-site .activity-copy { padding: 25px; }
+  .whimsical-site .activity-copy h3 { font-size: 2rem; }
+  .whimsical-site .activity-art > span { bottom: 13px; }
+  .whimsical-site .activity-note { font-size: .8125rem; }
+  .whimsical-site .host-section { border-radius: 35px 5px; }
+  .whimsical-site .host-section > svg { width: 110px; height: 110px; }
+  .whimsical-site .booking-section { border-radius: 50% 50% 0 0 / 20px 20px 0 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .whimsical-site .parallax-layer { transform: none !important; }
+  .whimsical-site *, .whimsical-site *::before, .whimsical-site *::after { animation: none !important; transition: none !important; }
+}

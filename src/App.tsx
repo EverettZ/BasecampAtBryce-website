@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { BedDouble, Bike, ChevronDown, ChevronLeft, ChevronRight, Coffee, Flag, Gamepad2, House, MapPin, Menu, Snowflake, Trees, Waves, X } from 'lucide-react';
+import { BedDouble, ChevronDown, ChevronLeft, ChevronRight, Coffee, Gamepad2, House, MapPin, Menu, Trees, Waves, X } from 'lucide-react';
+import { ActivityScene, AdventureLandscape, LakeDoodle, MotionToggle, WhimsyFrame } from './Whimsy';
 import { activities, bedrooms, comforts, faqs, links, navigation, photos, property, recommendations, type Photo } from './content';
 
-const icons = { coffee: Coffee, trees: Trees, games: Gamepad2, home: House, snow: Snowflake, bike: Bike, golf: Flag };
+const icons = { coffee: Coffee, trees: Trees, games: Gamepad2, home: House };
 
 function MountainMark({ className = '' }: { className?: string }) {
   return <svg className={className} viewBox="0 0 76 48" fill="none" aria-hidden="true"><path d="m4 39 25-33 16 22 10-13 17 24H4Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/><path d="m20 18 9 5 6-9M8 46h60" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>;
@@ -45,6 +46,13 @@ function Gallery({ initialIndex, onClose }: { initialIndex: number; onClose: () 
   }, []);
 
   return <dialog ref={dialogRef} className="gallery-dialog" aria-labelledby="gallery-title" onCancel={onClose} onKeyDown={event => {
+    if (event.key === 'Tab') {
+      const buttons = [...event.currentTarget.querySelectorAll<HTMLButtonElement>('button')];
+      const first = buttons[0];
+      const last = buttons[buttons.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    }
     if (event.key === 'ArrowLeft') { event.preventDefault(); move(-1); }
     if (event.key === 'ArrowRight') { event.preventDefault(); move(1); }
   }}>
@@ -72,19 +80,20 @@ export default function App() {
 
   const openPhoto = (id: string) => { const index = photos.findIndex(photo => photo.id === id); if (index >= 0) setGalleryIndex(index); };
 
-  return <>
+  return <WhimsyFrame>
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Basecamp at Bryce, home"><MountainMark /><span><span className="brand-name">BASECAMP</span>{' '}<span className="brand-subtitle">AT BRYCE</span></span></a>
+      <MotionToggle />
       <button ref={menuButton} className="menu-toggle icon-button" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={menuOpen} aria-controls="main-navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
       <nav ref={navRef} id="main-navigation" className={`main-nav ${menuOpen ? 'is-open' : ''}`} aria-label="Main navigation">{navigation.map(item => <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>{item.label}</a>)}<BookingLink className="header-booking">Plan your stay</BookingLink></nav>
     </header>
 
     <main id="main">
       <section id="top" className="hero" aria-labelledby="hero-title">
-        <PropertyImage id="exterior" className="hero-image" priority sizes="(max-width: 600px) 1100px, 100vw" decorative />
-        <div className="hero-shade" />
         <div className="hero-content"><p className="eyebrow"><MapPin size={14} /> BASYE, VIRGINIA · SHENANDOAH VALLEY</p><p className="hero-property-name">The Basecamp at Bryce</p><h1 id="hero-title">Slow mornings.<br /><em>Mountain adventures.</em></h1><p className="hero-description">A mountain home for getting outside,<br className="desktop-break" /> coming together, and doing a little less.</p><BookingLink className="button-light" /><p className="hero-booking-note">Your next getaway starts here.</p></div>
+        <div className="hero-postcard"><div className="postcard-photo"><PropertyImage id="exterior" className="hero-image" priority sizes="(max-width: 700px) 90vw, 42vw" /></div><span className="postcard-caption">The Basecamp at Bryce · Basye, Virginia</span><span className="postcard-stamp" aria-hidden="true"><MountainMark /></span></div>
+        <AdventureLandscape />
         <a className="hero-scroll" href="#the-home">SETTLE IN <ChevronDown size={18} /></a><span className="hero-side-note">A LITTLE CLOSER TO WHAT MATTERS</span>
       </section>
 
@@ -101,9 +110,9 @@ export default function App() {
 
       <section className="bedrooms-section section" aria-labelledby="bedrooms-title"><div className="section-heading"><div><p className="eyebrow">A GOOD NIGHT, A SLOW MORNING</p><h2 id="bedrooms-title">Find your <em>resting place.</em></h2></div><p>Four bedrooms. Their own personalities.<br />A little space for everyone.</p></div><div className="bedroom-grid">{bedrooms.map(room => <article className="bedroom" key={room.id}><button className="photo-button" onClick={() => openPhoto(room.id)} aria-label={`View ${room.name} photo`}><PropertyImage id={room.id} sizes="(max-width: 700px) 85vw, 25vw" /></button><h3>{room.name}</h3><p><BedDouble size={16} aria-hidden="true" />{room.bed}</p></article>)}</div></section>
 
-      <section id="lake-laura" className="lake-section" aria-labelledby="lake-title"><div className="lake-photo"><PropertyImage id="lake" sizes="(max-width: 850px) 1100px, 100vw" /><span className="lake-photo-label"><Waves size={17} aria-hidden="true" /> LAKE LAURA, CLOSE TO HOME</span></div><div className="lake-content"><p className="eyebrow">LESS SCREEN TIME. MORE SHORE TIME.</p><h2 id="lake-title">Take the<br /><em>long way around.</em></h2><p>Lake Laura is one of our favorite reasons to be here. A quiet walk through the trees. An afternoon on the water. The kind of day that doesn’t need much of a plan.</p><div className="lake-loop"><span className="lake-loop-number">2.5<span>miles</span></span><div><h3>A loop worth slowing down for.</h3><p>Follow the approximately 2.5-mile trail around the lake for wooded stretches, water views, and a little breathing room.</p></div></div><p className="lake-small">The trail is easy to moderate with natural, uneven terrain. Swimming, beach access, and paddle rentals are seasonal resort offerings, with separate fees and access rules.</p><ExternalLink href={links.lakeLaura}>Explore Lake Laura</ExternalLink></div></section>
+      <section id="lake-laura" className="lake-section" aria-labelledby="lake-title"><div className="lake-photo"><LakeDoodle /><PropertyImage id="lake" sizes="(max-width: 850px) 1100px, 100vw" /><span className="lake-photo-label"><Waves size={17} aria-hidden="true" /> LAKE LAURA, CLOSE TO HOME</span></div><div className="lake-content"><p className="eyebrow">LESS SCREEN TIME. MORE SHORE TIME.</p><h2 id="lake-title">Take the<br /><em>long way around.</em></h2><p>Lake Laura is one of our favorite reasons to be here. A quiet walk through the trees. An afternoon on the water. The kind of day that doesn’t need much of a plan.</p><div className="lake-loop"><span className="lake-loop-number">2.5<span>miles</span></span><div><h3>A loop worth slowing down for.</h3><p>Follow the approximately 2.5-mile trail around the lake for wooded stretches, water views, and a little breathing room.</p></div></div><p className="lake-small">The trail is easy to moderate with natural, uneven terrain. Swimming, beach access, and paddle rentals are seasonal resort offerings, with separate fees and access rules.</p><ExternalLink href={links.lakeLaura}>Explore Lake Laura</ExternalLink></div></section>
 
-      <section id="adventure" className="section adventure-section" aria-labelledby="adventure-title"><div className="centered-heading"><p className="eyebrow">ONE BASECAMP. EVERY SEASON.</p><h2 id="adventure-title">Get out there.<br /><em>Then get comfortable.</em></h2><p>Make it a powder-day getaway, a trail-filled weekend,<br className="desktop-break" /> or a whole lot of nothing. There’s a season for all of it.</p></div><div className="activity-grid">{activities.map(item => { const Icon = icons[item.icon]; return <article className={`activity activity-${item.id}`} key={item.id}><div className="activity-art" aria-hidden="true"><Icon strokeWidth={.8} /><div className="landscape-line landscape-one" /><div className="landscape-line landscape-two" /><span>{item.season}</span></div><div className="activity-copy"><h3>{item.title}</h3><p>{item.text}</p><ExternalLink href={item.url}>{item.linkLabel}</ExternalLink></div></article>; })}</div><p className="activity-note">Plan ahead with Bryce Resort for current conditions, tickets, lessons, rentals, and tee times.</p><div className="slow-day"><Coffee size={30} strokeWidth={1} aria-hidden="true" /><div><h3>And some days? Stay right here.</h3><p>Coffee on the deck. A good book. A game with your favorite people. Doing less is a perfectly good plan.</p></div><span className="slow-day-tag">THE ART OF TAKING IT EASY</span></div></section>
+      <section id="adventure" className="section adventure-section" aria-labelledby="adventure-title"><div className="centered-heading"><p className="eyebrow">ONE BASECAMP. EVERY SEASON.</p><h2 id="adventure-title">Get out there.<br /><em>Then get comfortable.</em></h2><p>Make it a powder-day getaway, a trail-filled weekend,<br className="desktop-break" /> or a whole lot of nothing. There’s a season for all of it.</p></div><div className="activity-grid">{activities.map(item => <article className={`activity activity-${item.id}`} key={item.id}><ActivityScene kind={item.id} season={item.season} /><div className="activity-copy"><h3>{item.title}</h3><p>{item.text}</p><ExternalLink href={item.url}>{item.linkLabel}</ExternalLink></div></article>)}</div><p className="activity-note">Plan ahead with Bryce Resort for current conditions, tickets, lessons, rentals, and tee times.</p><div className="slow-day"><Coffee size={30} strokeWidth={1} aria-hidden="true" /><div><h3>And some days? Stay right here.</h3><p>Coffee on the deck. A good book. A game with your favorite people. Doing less is a perfectly good plan.</p></div><span className="slow-day-tag">THE ART OF TAKING IT EASY</span></div></section>
 
       <section id="explore" className="section explore-section" aria-labelledby="explore-title"><div className="explore-intro"><p className="eyebrow">A LITTLE FARTHER AFIELD</p><h2 id="explore-title">Make a day<br /><em>of the Valley.</em></h2><p>Good food, small-town discoveries, and a few worthwhile detours. Here are some ideas for your time in the Shenandoah Valley.</p><div className="host-tip"><span>THE HOST’S PICK</span><p>“Our family especially loves grabbing a pizza at Pale Fire Brewing — and a beer for the adults!”</p><span className="host-signature">— Sara & Everett</span></div></div><div className="recommendations">{recommendations.map(item => <article key={item.name}><p className="eyebrow">{item.category}</p><div className="recommendation-title"><h3>{item.name}</h3><span>{item.location}</span></div><p>{item.text}</p><ExternalLink href={item.url}>{item.label}</ExternalLink></article>)}</div></section>
 
@@ -117,5 +126,5 @@ export default function App() {
     <footer className="site-footer"><a href="#top" className="brand"><MountainMark /><span><span className="brand-name">BASECAMP</span>{' '}<span className="brand-subtitle">AT BRYCE</span></span></a><p>Basye, Virginia<br /><span>Good days start here.</span></p><div><p>© {new Date().getFullYear()} The Basecamp at Bryce</p><p className="footer-disclaimer">An independently hosted vacation home.<br />Resort activities are operated separately by Bryce Resort.</p></div></footer>
     <div className="mobile-booking"><div><strong>The Basecamp at Bryce</strong><span>8 guests · 4 bedrooms</span></div><BookingLink>Check availability</BookingLink></div>
     {galleryIndex !== null && photos.length > 0 && <Gallery initialIndex={galleryIndex} onClose={() => setGalleryIndex(null)} />}
-  </>;
+  </WhimsyFrame>;
 }
