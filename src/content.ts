@@ -74,6 +74,7 @@ export const faqs = [
 ];
 
 export const soundtrack = {
+  autoplay: true,
   title: 'Twilight at Basecamp',
   description: 'A quiet lakeside soundtrack',
   src: './audio/twilight-at-basecamp.mp3',
