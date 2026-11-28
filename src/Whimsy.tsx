@@ -53,23 +53,28 @@ export function MotionToggle() {
 }
 
 function Pine({ x, y, scale = 1 }: { x: number; y: number; scale?: number }) {
-  return <g transform={`translate(${x} ${y}) scale(${scale})`}><path d="M0 10V-42" stroke="#37594b" strokeWidth="3"/><path d="M-17-5 0-29 17-5H-12L0-43 12-19H-9L0-54 9-32" fill="#52755c" stroke="#37594b" strokeWidth="1.5" strokeLinejoin="round"/></g>;
+  return <g transform={`translate(${x} ${y}) scale(${scale})`}><path d="M0-2V10" stroke="#37594b" strokeWidth="3" strokeLinecap="round"/><path d="M0-54 10-34H6L16-18H10L20-2H-20L-10-18H-16L-6-34H-10Z" fill="#52755c" stroke="#37594b" strokeWidth="1.5" strokeLinejoin="round"/></g>;
 }
 
 // Absolute paths share joint coordinates; separate limbs never inherit a prior endpoint.
 function Skier() {
   return <g className="skier-motion" stroke="#284b43" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none">
-    <path d="M-24 31 34 40Q42 41 44 36M-30 39 24 48Q31 49 34 44" />
-    <path d="M-24-5-29 30M23 4 31 33" strokeWidth="2" />
-    <path d="M3 1-12 20-6 42 1 43M3 1 21 20 18 36 25 38" strokeWidth="5" />
-    <path d="M-4-23-2-15" strokeWidth="4" />
-    <path d="M-2-15 3 1" stroke="#b75f3d" strokeWidth="10" />
-    <path d="M-2-14-15-1M-2-14 9-2" stroke="#b75f3d" strokeWidth="6" />
-    <path d="M-15-1-24-5M9-2 23 4" stroke="#e0ab7c" strokeWidth="4" />
-    <path d="M-4-22-19-25-33-32" stroke="#b75f3d" strokeWidth="4" />
-    <circle cx="-4" cy="-31" r="8" fill="#e0ab7c" />
-    <path d="M-13-32Q-13-45 0-42L6-32Z" fill="#d9b65e" stroke="none" />
-    <path d="M0-31 7-30" strokeWidth="4" />
+    {/* Side-on downhill tuck: hips back, both knees forward, skis parallel. */}
+    <path d="M-28 29 36 41Q43 42 46 37M-34 35 30 47Q37 48 40 43" />
+    <path d="M19 4-10 29M25-2 4 26" stroke="#6d8072" strokeWidth="1.8" />
+    <path d="M-8 4 9 17-1 33 6 35" stroke="#527568" strokeWidth="5" />
+    <path d="M-5 8 18 23 2 41 10 43" strokeWidth="6" />
+    <path d="M-1 33 6 35M2 41 10 43" strokeWidth="7" />
+    <path d="M6-20 3-12" stroke="#e0ab7c" strokeWidth="5" />
+    <path d="M3-12-7 6" stroke="#b75f3d" strokeWidth="12" />
+    <path d="M2-11 8-1 19 4" stroke="#9d593d" strokeWidth="5" />
+    <path d="M3-12 14-4" stroke="#b75f3d" strokeWidth="6" />
+    <path d="M14-4 25-2" stroke="#e0ab7c" strokeWidth="4" />
+    <circle cx="19" cy="4" r="2.5" fill="#284b43" stroke="none" />
+    <circle cx="25" cy="-2" r="2.5" fill="#284b43" stroke="none" />
+    <circle cx="10" cy="-27" r="8" fill="#e0ab7c" strokeWidth="2" />
+    <path d="M1-29Q2-42 14-37 21-34 20-28Z" fill="#d9b65e" stroke="none" />
+    <path d="M11-28 20-26" strokeWidth="4" />
   </g>;
 }
 

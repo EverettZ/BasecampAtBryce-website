@@ -92,7 +92,7 @@
 
 /* Motion is paused offscreen and by the global control. No content is hidden. */
 .skier-motion, .biker-motion, .kayak-motion, .paddle-motion, .bike-wheel, .golfer-motion { animation-play-state: paused; transform-box: view-box; }
-.skier-motion { animation: ski-carve 6s ease-in-out infinite; }
+.skier-motion { animation: ski-carve 6s ease-in-out infinite; transform-origin: 0 36px; }
 .biker-motion { animation: bike-bob 3s ease-in-out infinite; }
 .kayak-motion { animation: kayak-bob 5s ease-in-out infinite; }
 .paddle-motion { animation: paddle 5s ease-in-out infinite; transform-origin: 2px 7px; }
@@ -105,7 +105,7 @@
 [data-motion='on'] .motion-scene.is-in-view .paddle-motion,
 [data-motion='on'] .motion-scene.is-in-view .bike-wheel,
 [data-motion='on'] .motion-scene.is-in-view .golfer-motion { animation-play-state: running; }
-@keyframes ski-carve { 0%,100% { transform: translate(-7px, -2px) rotate(-3deg); } 50% { transform: translate(7px, 2px) rotate(3deg); } }
+@keyframes ski-carve { 0%,100% { transform: translate(-5px, -1px) rotate(-1.5deg); } 50% { transform: translate(5px, 1px) rotate(1.5deg); } }
 @keyframes bike-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
 @keyframes wheel-turn { to { transform: rotate(360deg); } }
 @keyframes kayak-bob { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(3px) rotate(2deg); } }
